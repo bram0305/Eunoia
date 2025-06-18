@@ -4,34 +4,78 @@
     <meta charset="UTF-8">
     <title>Reserva de Citas - Eunoia Health</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link th:href="@{/css/estilos.css}" rel="stylesheet">
+    <!-- Solo Tailwind, elimina la referencia a estilos.css si ya no la usas -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div0 th:fragment="principal" class="container">
+<body class="m-0 font-sans">
+    <div th:fragment="principal" class="flex flex-col md:flex-row min-h-screen">
         <!-- Sección Izquierda -->
-        <div class="left">
-            <img src="/images/logo.png" alt="Eunoia Health Logo" class="logo">
-            <h1><span class="highlight">Bienvenido a</span><br>nuestra página de reservas<br>para citas de <br>psicología</h1>
+        <div class="flex flex-1 flex-col justify-center items-center bg-white p-10 text-left">
+            <div class="flex justify-between items-center w-full ">    
+                <div class="text-teal-700/90 mb-4 w-32 text-right">
+                    <div th:replace="fragments/logo :: logo"></div>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-7xl font-extrabold text-teal-700 leading-tight mt-2">
+                <span class="bg-teal-700 text-white px-2 py-1 inline-block">Bienvenido a</span><br>
+                nuestra página de reservas<br>
+                para citas de <br>psicología
+            </h1>
         </div>
 
         <!-- Sección Derecha -->
-        <div class="right">
+        <div class="flex flex-1 flex-col bg-[#3aa89e] text-white relative p-10">
             <p>
-                <a th:href="@{/iniciosesion/}"><button type="button" class="ver-registro" onclick="">Ver registro</button></a>
+                <a th:href="@{/iniciosesion/}">
+                    <button type="button" class="absolute top-10 right-10 bg-white text-[#134e40] px-4 py-2 rounded-lg font-bold text-2xl shadow hover:bg-gray-100 transition">
+                        Ver registro
+                    </button>
+                </a>
             </p>
-            <h2>Antes de <br>continuar</h2>
-            <p class="pregunta">
-            ¿Cuenta usted con alguna discapacidad visual registrada <br>por el CONADIS?
+            <h2 class="text-5xl md:text-8xl font-extrabold leading-none pl-0 md:pl-10 mb-0 mt-20 md:mt-0">
+                Antes de <br>continuar
+            </h2>
+            <p class="mt-5 text-2xl md:text-5xl font-bold pl-0 md:pl-10 mb-2">
+                ¿Cuenta usted con alguna discapacidad visual registrada <br>por el CONADIS?
             </p>
-            <p class="instrucciones">(Use tap para desplazarse entre botones y ENTER <br> para seleccionar)</p>
-
+            <p class="text-lg md:text-2xl font-bold opacity-90 pl-0 md:pl-10 mb-8">
+                (Use TAB para desplazarse entre botones y ENTER <br> para seleccionar)
+            </p>
             <!-- Botones landing -->
-            <div class="botones">
-                <a th:href="@{/lading/}"><button type="button" class="opcion">Discapacidad visual casi total o ceguera</button></a>
-                <a th:href="@{/lading/}"><button type="button" class="opcion">Discapacidad visual leve, moderada o grave</button></a>
-                <a th:href="@{/lading/}"><button type="button" class="opcion">No cuento con discapacidad visual</button></a>
+            <div class="flex flex-col gap-4 px-0 md:px-10">
+                <a th:href="@{/lading/}">
+                    <button type="button" class="w-full text-center bg-white text-[#134e40] border-none py-4 rounded-lg text-2xl md:text-3xl font-bold cursor-pointer transition hover:bg-[#e0f7f4]">
+                        Discapacidad visual casi total o ceguera
+                    </button>
+                </a>
+                <a th:href="@{/lading/}">
+                    <button type="button" class="w-full text-center bg-white text-[#134e40] border-none py-4 rounded-lg text-2xl md:text-3xl font-bold cursor-pointer transition hover:bg-[#e0f7f4]">
+                        Discapacidad visual leve, moderada o grave
+                    </button>
+                </a>
+                <a th:href="@{/lading/}">
+                    <button type="button" class="w-full text-center bg-white text-[#134e40] border-none py-4 rounded-lg text-2xl md:text-3xl font-bold cursor-pointer transition hover:bg-[#e0f7f4]">
+                        No cuento con discapacidad visual
+                    </button>
+                </a>
             </div>
         </div>
     </div>
+    <!-- Script para mover el widget al extremo inferior izquierdo -->
+    <script>
+      (function(d){
+        var s = d.createElement("script");
+        s.setAttribute("data-position", 4); // 3 = inferior izquierdo
+        s.setAttribute("data-widget_layout", "full");
+        s.setAttribute("data-color", "#287974");       
+        s.setAttribute("data-account", "bLLEVPcx9p");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);
+      })(document)
+    </script>
+    <noscript>
+      Please ensure Javascript is enabled for purposes of 
+      <a href="https://userway.org">website accessibility</a>
+    </noscript>
 </body>
 </html>
