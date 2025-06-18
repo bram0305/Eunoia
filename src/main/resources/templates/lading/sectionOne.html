@@ -1,8 +1,103 @@
 <div th:fragment="sectionOne">
-    <section class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 to-blue-500 text-white px-8 py-16">
-        <h1 class="text-5xl font-extrabold mb-4 tracking-tight drop-shadow-lg">Bienvenido a Nuestra Marca</h1>
-        <h2 class="text-2xl font-semibold mb-6">Impulsando el futuro con creatividad y pasión</h2>
-        <p class="max-w-xl text-lg mb-8 text-blue-100">Descubre cómo nuestra visión y valores transforman ideas en experiencias inolvidables. Únete a nosotros en este viaje de innovación y autenticidad.</p>
-        <a href="#sectionTwo" class="bg-white text-blue-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-100 transition">Descubre más</a>
+    <section class="flex flex-col min-h-screen bg-white relative overflow-hidden">
+        <!-- Fondo con esferas blur mejor posicionadas y con transiciones suaves -->
+        <div class="absolute inset-0 pointer-events-none z-0" aria-hidden="true">
+            <!-- Esfera principal (arriba izquierda, gran impacto visual) -->
+            <div class="absolute left-[-15%] top-[-15%] w-[700px] h-[700px] bg-teal-400 rounded-full opacity-[0.15] blur-[150px] transition-all duration-1000 ease-in-out"></div>
+            
+            <!-- Esfera secundaria (abajo derecha, contrapeso visual) -->
+            <div class="absolute right-[-12%] bottom-[-12%] w-[550px] h-[550px] bg-teal-600 rounded-full opacity-[0.12] blur-[120px] transition-all duration-1000 ease-in-out delay-200"></div>
+            
+            <!-- Esfera de acento (centro izquierda, refuerzo de profundidad) -->
+            <div class="absolute left-[-8%] bottom-[15%] w-[300px] h-[300px] bg-teal-300 rounded-full opacity-[0.10] blur-[80px] transition-all duration-1000 ease-in-out delay-100"></div>
+            
+            <!-- Esfera de contraste (derecha centro, equilibrio visual) -->
+            <div class="absolute right-[-10%] top-[35%] w-[400px] h-[400px] bg-teal-500 rounded-full opacity-[0.08] blur-[100px] transition-all duration-1000 ease-in-out delay-300"></div>
+            
+            <!-- Esfera de detalle (arriba derecha, punto focal) -->
+            <div class="absolute right-[5%] top-[5%] w-[200px] h-[200px] bg-teal-600 rounded-full opacity-[0.18] blur-[60px] transition-all duration-1000 ease-in-out delay-150"></div>
+        </div>
+
+        <!-- Contenedor principal con mejor manejo del espacio -->
+        <div class="flex flex-col justify-between flex-grow relative z-10">
+            <!-- NavBar con mejor contraste y accesibilidad -->
+            <header class="backdrop-blur-sm bg-white/80">
+                <nav class="flex items-center justify-between max-w-7xl mx-auto w-full py-6 px-4 lg:px-8" aria-label="Navegación principal">
+                    <div class="flex items-center">
+                        <div class="h-10 w-36 mr-2 text-neutral-900">
+                            <div th:replace="fragments/logo :: logo" aria-label="Logo principal"></div>
+                        </div>
+                    </div>
+                    <ul class="hidden md:flex space-x-8 text-neutral-800 font-medium">
+                        <li><a href="#" class="hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 rounded px-3 py-2 transition-colors" tabindex="0" aria-current="page">Inicio</a></li>
+                        <li><a href="#" class="hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 rounded px-3 py-2 transition-colors" tabindex="0">Servicios</a></li>
+                        <li><a href="#" class="hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 rounded px-3 py-2 transition-colors" tabindex="0">Equipo</a></li>
+                        <li><a href="#" class="hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 rounded px-3 py-2 transition-colors" tabindex="0">Contacto</a></li>
+                    </ul>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hidden md:inline-flex items-center text-neutral-800 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 rounded px-3 py-2 transition-colors" tabindex="0">Iniciar sesión</a>
+                        <a href="#" class="bg-white text-neutral-800 border border-neutral-300 rounded-lg px-5 py-2.5 font-semibold shadow-sm hover:bg-teal-50 hover:border-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-all" tabindex="0" aria-label="Comenzar el proceso de registro">Comenzar</a>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- Contenido principal con mejor espaciado y jerarquía -->
+            <main class="flex-grow flex items-center py-8">
+                <div class="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between w-full px-4 lg:px-8 gap-12">
+                    <!-- Texto principal con mejor contraste y legibilidad -->
+                    <div class="w-full lg:w-1/2 space-y-6">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-neutral-900 leading-tight">
+                            Tu bienestar <span class="text-teal-600">empieza aquí.</span>
+                        </h1>
+                        <p class="text-lg lg:text-xl text-neutral-700 leading-relaxed">
+                            Plataforma accesible para reservar citas psicológicas, diseñada para todos, con especial enfoque en las necesidades de personas con discapacidad visual.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                            <a href="#" class="inline-flex items-center justify-center bg-teal-600 text-white px-8 py-3.5 rounded-lg text-lg font-semibold shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-all" tabindex="0" aria-label="Reservar una cita psicológica">
+                                Reservar cita
+                            </a>
+                            <a href="#" class="inline-flex items-center justify-center bg-white text-teal-600 border border-teal-600 px-8 py-3.5 rounded-lg text-lg font-semibold shadow-sm hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-all" tabindex="0" aria-label="Conocer más sobre nuestros servicios">
+                                Saber más
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Imagen con mejor tamaño y accesibilidad -->
+                    <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                        <img src="/images/doctor.png" alt="Profesional de psicología sonriente, mostrando empatía y profesionalismo" class="w-90 max-w-md" role="img" />
+                    </div>
+                </div>
+            </main>
+
+            <!-- Sección de logos mejorada -->
+            <footer class="w-full mt-auto">
+                <div class="w-full">
+                    <h2 class="sr-only">Organizaciones que confían en nosotros</h2>
+                    <div class="w-full bg-white/80 backdrop-blur-md border-t border-teal-100 py-12">
+                        <p class="text-center text-neutral-700 text-lg mb-8 font-medium">
+                            Confiado por organizaciones comprometidas con la accesibilidad
+                        </p>
+                        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 px-4">
+                            <!-- Logos con mejor tamaño y accesibilidad -->
+                            <div class="flex items-center justify-center h-16" aria-label="Organización Segment">
+                                <div th:replace="fragments/logo :: logo" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="flex items-center justify-center h-16" aria-label="Organización Asana">
+                                <div th:replace="fragments/logo :: logo" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="flex items-center justify-center h-16" aria-label="Organización Intercom">
+                                <div th:replace="fragments/logo :: logo" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="flex items-center justify-center h-16" aria-label="Organización Gong">
+                                <div th:replace="fragments/logo :: logo" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="flex items-center justify-center h-16" aria-label="Organización HubSpot">
+                                <div th:replace="fragments/logo :: logo" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </section>
 </div>
