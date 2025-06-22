@@ -1,24 +1,46 @@
 <div th:fragment="sectionThree">
-    <section class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-800 to-purple-400 text-white px-8 py-16">
-        <h2 class="text-4xl font-bold mb-4 tracking-tight drop-shadow-lg">Nuestros Valores</h2>
-        <p class="max-w-2xl text-lg mb-8 text-purple-100">En el corazón de nuestra marca están los valores que nos guían día a día. Creemos en la transparencia, la colaboración y el crecimiento continuo para ofrecer siempre lo mejor.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div class="bg-white bg-opacity-10 rounded-lg p-6 flex flex-col items-center">
-                <span class="text-3xl mb-2">🤝</span>
-                <h3 class="font-semibold text-xl mb-1">Colaboración</h3>
-                <p class="text-purple-100 text-center">Trabajamos juntos para lograr grandes resultados y fortalecer relaciones duraderas.</p>
+    <section class="flex flex-col min-h-screen bg-gradient-to-br from-teal-50 via-white to-purple-100 relative overflow-hidden">
+        <!-- Fondo decorativo con esferas y gradientes -->
+        <div class="absolute inset-0 pointer-events-none z-0" aria-hidden="true">
+            <div class="absolute left-[-10%] top-[-15%] w-[400px] h-[400px] rounded-full opacity-20 blur-[100px]"
+                 style="background: radial-gradient(circle at 60% 40%, #a78bfa 70%, #f0abfc 100%);"></div>
+            <div class="absolute right-[-8%] bottom-[-12%] w-[500px] h-[500px] rounded-full opacity-15 blur-[120px]"
+                 style="background: radial-gradient(circle at 40% 60%, #38bdf8 60%, #a78bfa 100%);"></div>
+            <div class="absolute left-[10%] bottom-[10%] w-[180px] h-[180px] rounded-full opacity-10 blur-[60px]"
+                 style="background: radial-gradient(circle at 60% 40%, #f0abfc 60%, #a78bfa 100%);"></div>
+        </div>
+
+        <div class="flex flex-col justify-center flex-grow relative z-10 max-w-7xl mx-auto w-full px-4 lg:px-8 py-20">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-neutral-900 mb-6 text-center leading-tight drop-shadow-lg">Nuestros Valores</h2>
+            <p class="max-w-2xl mx-auto text-lg text-neutral-700 mb-12 text-center">En el corazón de nuestra marca están los valores que nos guían día a día. Creemos en la transparencia, la colaboración y el crecimiento continuo para ofrecer siempre lo mejor.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white/80 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-teal-100">
+                    <span class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m9-4V6a4 4 0 00-8 0v4m8 0a4 4 0 01-8 0" /></svg>
+                    </span>
+                    <h3 class="font-semibold text-xl mb-2 text-teal-900">Colaboración</h3>
+                    <p class="text-neutral-700 text-center">Trabajamos juntos para lograr grandes resultados y fortalecer relaciones duraderas.</p>
+                </div>
+                <div class="bg-white/80 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-teal-100">
+                    <span class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.657-1.343-3-3-3zm0 0V4m0 7v9m0 0H7m5 0h5" /></svg>
+                    </span>
+                    <h3 class="font-semibold text-xl mb-2 text-green-700">Crecimiento</h3>
+                    <p class="text-neutral-700 text-center">Fomentamos el desarrollo personal y profesional en cada paso del camino.</p>
+                </div>
+                <div class="bg-white/80 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-teal-100">
+                    <span class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" /></svg>
+                    </span>
+                    <h3 class="font-semibold text-xl mb-2 text-purple-700">Transparencia</h3>
+                    <p class="text-neutral-700 text-center">Actuamos con honestidad y claridad en todas nuestras acciones y comunicaciones.</p>
+                </div>
             </div>
-            <div class="bg-white bg-opacity-10 rounded-lg p-6 flex flex-col items-center">
-                <span class="text-3xl mb-2">🌱</span>
-                <h3 class="font-semibold text-xl mb-1">Crecimiento</h3>
-                <p class="text-purple-100 text-center">Fomentamos el desarrollo personal y profesional en cada paso del camino.</p>
-            </div>
-            <div class="bg-white bg-opacity-10 rounded-lg p-6 flex flex-col items-center">
-                <span class="text-3xl mb-2">🔍</span>
-                <h3 class="font-semibold text-xl mb-1">Transparencia</h3>
-                <p class="text-purple-100 text-center">Actuamos con honestidad y claridad en todas nuestras acciones y comunicaciones.</p>
+            <div class="flex justify-center">
+                <a href="#sectionFour" class="inline-flex items-center justify-center bg-teal-600 text-white px-8 py-3.5 rounded-lg text-lg font-semibold shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-all" tabindex="0" aria-label="Ir al pie de página">
+                    Siguiente
+                </a>
             </div>
         </div>
-        <a href="#sectionFour" class="bg-white text-purple-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-100 transition">Siguiente</a>
     </section>
 </div>
