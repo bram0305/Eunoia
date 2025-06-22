@@ -1,12 +1,263 @@
 <div th:fragment="sectionTwo">
-    <section class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-700 to-green-400 text-white px-8 py-16">
-        <h2 class="text-4xl font-bold mb-4 tracking-tight drop-shadow-lg">Nuestra Identidad</h2>
-        <p class="max-w-2xl text-lg mb-8 text-green-100">Creamos conexiones auténticas entre personas y marcas. Nuestra esencia se basa en la confianza, la innovación y el compromiso con la excelencia.</p>
-        <ul class="flex flex-wrap gap-6 mb-8">
-            <li class="bg-white bg-opacity-10 rounded-lg px-6 py-4 font-medium">Innovación</li>
-            <li class="bg-white bg-opacity-10 rounded-lg px-6 py-4 font-medium">Confianza</li>
-            <li class="bg-white bg-opacity-10 rounded-lg px-6 py-4 font-medium">Pasión</li>
-        </ul>
-        <a href="#contacto" class="bg-white text-green-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-100 transition">Contáctanos</a>
+    <section class="flex flex-col items-center min-h-screen bg-gradient-to-b from-teal-600 to-teal-700 py-28 px-4 relative overflow-hidden">
+        <!-- Efectos de fondo sutiles -->
+        <div class="absolute inset-0 pointer-events-none z-0" aria-hidden="true">
+            <div class="absolute right-[-10%] top-[20%] w-[500px] h-[500px] rounded-full opacity-10 blur-[100px]"
+                style="background: radial-gradient(circle, rgba(236,254,255,0.3) 0%, rgba(236,254,255,0) 70%);"></div>
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-12 tracking-tight text-center max-w-3xl leading-tight">
+            Conoce a nuestro <span class="text-teal-200">equipo especializado</span>
+        </h2>
+        
+        <!-- Contenedor principal de expedientes -->
+        <div class="relative w-full max-w-6xl">
+            <!-- Pestañas estilo carpeta (accesibles) -->
+            <div role="tablist" aria-label="Expedientes de psicólogos" class="flex gap-2 select-none">
+                <button role="tab" 
+                        aria-selected="true" 
+                        aria-controls="frank-tab" 
+                        id="frank"
+                        class="px-6 py-3 rounded-t-lg bg-white text-teal-800 font-semibold border-b-0 transition-all "
+                        data-target="frank-tab"
+                        tabindex="0"
+                        onclick="switchTab('frank')">
+                    <span class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                        </svg>
+                        Frank Alfaro
+                    </span>
+                </button>
+                <button role="tab" 
+                        aria-selected="false" 
+                        aria-controls="ana-tab" 
+                        id="ana"
+                        class="px-6 py-3 rounded-t-lg bg-teal-100/70 text-teal-800 font-semibold hover:bg-white transition-all "
+                        data-target="ana-tab"
+                        tabindex="-1"
+                        onclick="switchTab('ana')">
+                    <span class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                        </svg>
+                        Ana Ruiz
+                    </span>
+                </button>
+                <button role="tab" 
+                        aria-selected="false" 
+                        aria-controls="sofia-tab" 
+                        id="sofia"
+                        class="px-6 py-3 rounded-t-lg bg-teal-100/70 text-teal-800 font-semibold hover:bg-white transition-all "
+                        data-target="sofia-tab"
+                        tabindex="-1"
+                        onclick="switchTab('sofia')">
+                    <span class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                        </svg>
+                        Rachel Kathlen
+                    </span>
+                </button>
+            </div>
+            
+            <!-- Contenido de expedientes -->
+            <div class="bg-white rounded-b-2xl py-10 rounded-tr-2xl shadow-2xl overflow-hidden">
+                <!-- Expediente Frank (activo por defecto) -->
+                <div role="tabpanel" 
+                    id="frank-tab" 
+                    aria-labelledby="frank"
+                    class="p-8 md:p-10 transition-all duration-300 ease-in-out">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-shrink-0 flex flex-col items-center">
+                            <img src="../images/doc2.jpg" alt="Foto del psicólogo Frank Alfaro" class="w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl border-4 border-teal-200 shadow-lg mb-4">
+                            <div class="bg-teal-100/50 px-4 py-2 rounded-full text-teal-800 font-medium text-sm flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                Disponible hoy
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-3xl font-bold text-teal-900 mb-2">Frank Alfaro</h3>
+                            <p class="text-lg text-teal-800 font-medium mb-1">Psicólogo Educativo</p>
+                            <p class="text-gray-600 mb-6">Especialista en intervención socioeducativa y prevención de acoso escolar</p>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-xl font-semibold text-teal-800 mb-3">Especialidades</h4>
+                                <ul class="flex flex-wrap gap-2">
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">Acoso escolar</li>
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">TDAH</li>
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">Autismo</li>
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">Orientación familiar</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-teal-800 mb-1">Idiomas</h4>
+                                    <p class="text-gray-700">Español, Inglés (intermedio)</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-teal-800 mb-1">Contacto</h4>
+                                    <p class="text-gray-700">
+                                        <a href="mailto:falfaroa@gmail.com" class="underline hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-300 rounded">falfaroa@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <button class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2">
+                                Reservar cita
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Expediente Ana (oculto por defecto) -->
+                <div role="tabpanel" 
+                    id="ana-tab" 
+                    aria-labelledby="ana"
+                    class="hidden p-8 md:p-10 transition-all duration-300 ease-in-out">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-shrink-0 flex flex-col items-center">
+                            <img src="../images/doc5.jpg" alt="Foto de la psicóloga Ana Ruiz" class="w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl border-4 border-teal-200 shadow-lg mb-4">
+                            <div class="bg-teal-100/50 px-4 py-2 rounded-full text-teal-800 font-medium text-sm flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                Disponible hoy
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-3xl font-bold text-teal-900 mb-2">Ana Ruiz</h3>
+                            <p class="text-lg text-teal-800 font-medium mb-1">Psicóloga Clínica</p>
+                            <p class="text-gray-600 mb-6">Especialista en terapia cognitivo-conductual y atención a personas con discapacidad visual</p>
+                            <div class="mb-6">
+                                <h4 class="text-xl font-semibold text-teal-800 mb-3">Especialidades</h4>
+                                <ul class="flex flex-wrap gap-2">
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">Terapia individual</li>
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">Ansiedad</li>
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">Discapacidad visual</li>
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">Terapia familiar</li>
+                                </ul>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-teal-800 mb-1">Idiomas</h4>
+                                    <p class="text-gray-700">Español, Inglés</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-teal-800 mb-1">Contacto</h4>
+                                    <p class="text-gray-700">
+                                        <a href="mailto:ana.ruiz@ejemplo.com" class="underline hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-300 rounded">ana.ruiz@ejemplo.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2">
+                                Reservar cita
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Expediente Sofía (oculto por defecto) -->
+                <div role="tabpanel" 
+                    id="sofia-tab" 
+                    aria-labelledby="sofia"
+                    class="hidden p-8 md:p-10 transition-all duration-300 ease-in-out">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-shrink-0 flex flex-col items-center">
+                            <img src="../images/doc4.jpg" alt="Foto de la psicóloga Rachel Kathlen" class="w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl border-4 border-teal-200 shadow-lg mb-4">
+                            <div class="bg-teal-100/50 px-4 py-2 rounded-full text-teal-800 font-medium text-sm flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                Disponible hoy
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-3xl font-bold text-teal-900 mb-2">Rachel Kathlen</h3>
+                            <p class="text-lg text-teal-800 font-medium mb-1">Psicóloga de Desarrollo Personal</p>
+                            <p class="text-gray-600 mb-6">Experta en accesibilidad, desarrollo personal y educación inclusiva</p>
+                            <div class="mb-6">
+                                <h4 class="text-xl font-semibold text-teal-800 mb-3">Especialidades</h4>
+                                <ul class="flex flex-wrap gap-2">
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">Desarrollo personal</li>
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">Educación inclusiva</li>
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">Apoyo emocional</li>
+                                    <li class="bg-teal-100/50 text-teal-800 px-3 py-1 rounded-full text-sm">Accesibilidad</li>
+                                </ul>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-teal-800 mb-1">Idiomas</h4>
+                                    <p class="text-gray-700">Español</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-teal-800 mb-1">Contacto</h4>
+                                    <p class="text-gray-700">
+                                        <a href="mailto:sofia.torres@ejemplo.com" class="underline hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-300 rounded">sofia.torres@ejemplo.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2">
+                                Reservar cita
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Instrucciones accesibles -->
+        <div class="mt-8 text-white/90 text-lg text-center max-w-2xl">
+            <p class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                </svg>
+                Puedes usar el teclado (Tab y Enter) o hacer clic.
+            </p>
+        </div>
+        <script>
+            // Cambio de pestañas accesible (teclado y mouse)
+            const tabIds = ['frank', 'ana', 'sofia'];
+            function switchTab(id) {
+                tabIds.forEach(tab => {
+                    const btn = document.getElementById(tab);
+                    const panel = document.getElementById(tab + '-tab');
+                    if (tab === id) {
+                        btn.setAttribute('aria-selected', 'true');
+                        btn.tabIndex = 0;
+                        btn.classList.add('bg-white');
+                        btn.classList.remove('bg-teal-100/70');
+                        panel.classList.remove('hidden');
+                    } else {
+                        btn.setAttribute('aria-selected', 'false');
+                        btn.tabIndex = -1;
+                        btn.classList.remove('bg-white', 'shadow-md');
+                        btn.classList.add('bg-teal-100/70');
+                        panel.classList.add('hidden');
+                    }
+                });
+            }
+            // Accesibilidad para flechas y enter/espacio
+            document.addEventListener('DOMContentLoaded', () => {
+                tabIds.forEach((tab, idx) => {
+                    const btn = document.getElementById(tab);
+                    btn.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                            e.preventDefault();
+                            document.getElementById(tabIds[(idx + 1) % tabIds.length]).focus();
+                        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                            e.preventDefault();
+                            document.getElementById(tabIds[(idx - 1 + tabIds.length) % tabIds.length]).focus();
+                        } else if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            switchTab(tab);
+                        }
+                    });
+                });
+            });
+        </script>
     </section>
 </div>
