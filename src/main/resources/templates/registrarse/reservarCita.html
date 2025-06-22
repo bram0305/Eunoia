@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Agendar cita</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-teal-50 to-white min-h-screen flex flex-col">
+  <section class="bg-white min-h-screen flex flex-col">
+    <!-- Barra superior accesible -->
+    <div class="bg-teal-600 flex items-center px-4 py-2 justify-between shadow z-10">
+      <div class="flex items-center gap-2">
+        <!-- Aquí puedes agregar otros controles si lo deseas -->
+      </div>
+      <div class="flex items-center justify-end w-full text-white">
+        <div th:replace="fragments/logo :: logo" aria-label="Logo principal"></div>
+      </div>
+    </div>
+
+    <!-- Formulario de datos personales -->
+    <section class="max-w-4xl mx-auto w-full py-4 px-4">
+      <form class="p-6 md:p-10 " aria-labelledby="datos-personales">
+        <h1 id="datos-personales" class="text-3xl md:text-4xl font-bold text-teal-700 mb-2 flex items-center">
+          Agendar cita <span class="ml-3 bg-teal-700/90 text-white text-base px-3 py-1 rounded font-medium">Ingrese sus datos personales.</span>
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div>
+            <label class="block text-teal-900 font-semibold mb-1" for="nombres">Nombres</label>
+            <input id="nombres" name="nombres" type="text" value="Mario Efrain"
+              class="w-full rounded-full border border-gray-300 px-5 py-2 text-gray-700 focus:ring-2 focus:ring-teal-400 focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-teal-900 font-semibold mb-1" for="apellidos">Apellidos</label>
+            <input id="apellidos" name="apellidos" type="text" value="Pando Garcia"
+              class="w-full rounded-full border border-gray-300 px-5 py-2 text-gray-700 focus:ring-2 focus:ring-teal-400 focus:outline-none" />
+          </div>
+          <div>
+            <span class="block text-teal-900 font-semibold mb-1">Género</span>
+            <div class="flex gap-4 items-center">
+              <label class="flex items-center gap-1 font-medium text-gray-700">
+                <input type="radio" name="genero" id="hombre" class="accent-teal-600" checked />
+                Hombre
+              </label>
+              <label class="flex items-center gap-1 font-medium text-gray-700">
+                <input type="radio" name="genero" id="mujer" class="accent-teal-600" />
+                Mujer
+              </label>
+              <label class="flex items-center gap-1 font-medium text-gray-700">
+                <input type="radio" name="genero" id="otro" class="accent-teal-600" />
+                Otro
+              </label>
+              <label class="flex items-center gap-1 font-medium text-gray-700">
+                <input type="radio" name="genero" id="no-decir" class="accent-teal-600" />
+                Prefiero no decirlo
+              </label>
+            </div>
+          </div>
+          <div>
+            <label class="block text-teal-900 font-semibold mb-1" for="edad">Edad</label>
+            <input id="edad" name="edad" type="number" value="20" min="0"
+              class="w-full rounded-full border border-gray-300 px-5 py-2 text-gray-700 focus:ring-2 focus:ring-teal-400 focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-teal-900 font-semibold mb-1" for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" value="987381612"
+              class="w-full rounded-full border border-gray-300 px-5 py-2 text-gray-700 focus:ring-2 focus:ring-teal-400 focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-teal-900 font-semibold mb-1" for="correo">Correo</label>
+            <input id="correo" name="correo" type="email" value="mariopg07.@gmail.com"
+              class="w-full rounded-full border border-gray-300 px-5 py-2 text-gray-700 focus:ring-2 focus:ring-teal-400 focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-teal-900 font-semibold mb-1" for="dni">DNI</label>
+            <input id="dni" name="dni" type="text" value="xxxxxxxx"
+              class="w-full rounded-full border border-gray-300 px-5 py-2 text-gray-700 focus:ring-2 focus:ring-teal-400 focus:outline-none" />
+          </div>
+        </div>
+      </form>
+
+      <form class="px-6 py-2 md:px-10 md:py-4" aria-labelledby="datos-cita">
+          <textarea id="motivo" name="motivo" rows="4"
+            class="w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-700 bg-gray-200 focus:ring-2 focus:ring-teal-400 focus:outline-none resize-none"></textarea>
+        </div>
+        <div class="mt-8 flex flex-col gap-6 md:flex-row md:items-end md:gap-8">
+          <div>
+            <label class="block text-teal-900 font-semibold mb-1">Fechas disponibles</label>
+            <div class="flex gap-2 items-center">
+              <select class="rounded-full border border-gray-300 px-4 py-1 focus:ring-2 focus:ring-teal-400 focus:outline-none" aria-label="Hora">
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+              </select>
+              <select class="rounded-full border border-gray-300 px-2 py-1 focus:ring-2 focus:ring-teal-400 focus:outline-none" aria-label="Minutos">
+                <option>00</option>
+                <option>30</option>
+              </select>
+              <select class="rounded-full border border-gray-300 px-2 py-1 focus:ring-2 focus:ring-teal-400 focus:outline-none" aria-label="AM/PM">
+                <option>a.m.</option>
+                <option>p.m.</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-teal-900 font-semibold mb-1">Fecha</label>
+            <div class="flex gap-2 items-center">
+              <select class="rounded-full border border-gray-300 px-4 py-1 focus:ring-2 focus:ring-teal-400 focus:outline-none" aria-label="Día">
+                <option>11</option>
+                <option>12</option>
+              </select>
+              <select class="rounded-full border border-gray-300 px-4 py-1 focus:ring-2 focus:ring-teal-400 focus:outline-none" aria-label="Mes">
+                <option>11</option>
+                <option>12</option>
+              </select>
+              <select class="rounded-full border border-gray-300 px-4 py-1 focus:ring-2 focus:ring-teal-400 focus:outline-none" aria-label="Año">
+                <option>2025</option>
+                <option>2026</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded font-semibold shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2">
+            AGENDAR
+          </button>
+        </div>
+      </form>
+    </section>
+  </section>
+  <script>
+    (function(d){
+      var s = d.createElement("script");
+      s.setAttribute("data-position", 3);
+      s.setAttribute("data-language", "es");
+      s.setAttribute("data-widget_layout", "full");
+      s.setAttribute("data-account", "bLLEVPcx9p");
+      s.setAttribute("src", "https://cdn.userway.org/widget.js");
+      (d.body || d.head).appendChild(s);
+    })(document)
+  </script>
+  <noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
+</body>
+</html>

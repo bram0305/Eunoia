@@ -52,4 +52,9 @@ public class RegistrarseController {
 
     }
 
+    @GetMapping("/reservarCita")
+    public String reservarCita() {
+        return "registrarse/reservarCita";
+    }
+
 }
